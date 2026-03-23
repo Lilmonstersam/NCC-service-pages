@@ -66,6 +66,11 @@ interface ServicePageData {
   formTitle: string;
   formSubtitle: string;
   formFacilityOptions: string[];
+  testimonials?: {
+    quote: string;
+    author: string;
+    title: string;
+  }[];
 }
 
 const pagesData: ServicePageData[] = [
@@ -289,7 +294,14 @@ const pagesData: ServicePageData[] = [
     ],
     formTitle: 'Get an Industrial Proposal',
     formSubtitle: "Book a site walkthrough to assess your facility's safety and cleaning requirements.",
-    formFacilityOptions: ['Manufacturing Plant', 'Warehouse', 'Distribution Centre', 'Food Processing', 'Other']
+    formFacilityOptions: ['Manufacturing Plant', 'Warehouse', 'Distribution Centre', 'Food Processing', 'Other'],
+    testimonials: [
+      {
+        quote: "When it came time for us to switch facilities cleaners, we considered a number of companies in the local marketplace. When I met Namoli I was blown away by their professionalism. They weren't just yes people. They asked the right questions and did a comprehensive review. They demonstrated through our tender that they understood our business, did an additional walk through with their franchisee and were professional end to end. We felt comforted, reassured and secure and the Swept App gave us great confidence as it is visual as well as written. Overall, the franchisee team are fantastic and there is continuity of team.",
+        author: "Nikki Norum",
+        title: "Office Manager, Brisbane Camperland"
+      }
+    ]
   },
   {
     id: 'medical',
@@ -366,7 +378,14 @@ const pagesData: ServicePageData[] = [
     ],
     formTitle: 'Get a Medical Cleaning Proposal',
     formSubtitle: "Book a confidential site walkthrough to discuss your infection control requirements.",
-    formFacilityOptions: ['Medical Clinic', 'Dental Practice', 'Hospital', 'Allied Health', 'Other']
+    formFacilityOptions: ['Medical Clinic', 'Dental Practice', 'Hospital', 'Allied Health', 'Other'],
+    testimonials: [
+      {
+        quote: "At Keilor Private Hospital, we have had a relationship with the crew from Namoli for many years. We consider them to be part of our team and rely on them to keep the facility well maintained. Janaka and his team at Namoli are always available to us and happy to arrange after-hours work when needed. They have provided us with certificate cleans at breakneck speed with negligible disruption to business and can deal with any urgent concern that occurs. It has been very important to us to have the facility presented as impeccably clean so that our patients have confidence in their healthcare experience during these escalated times. The team at Namoli is an all-encompassing, one stop service provider that saves me hours of time and concern, delivering first class outcomes, not only at a competitive price, but ultimately working with me to save money with innovative solutions and economies via his extensive network. I highly recommend Namoli and Janaka and his team and look forward to working with them for many years to come.",
+        author: "Jayne Gaunt",
+        title: "Chief Executive Officer, Keilor Private Hospital, Melbourne"
+      }
+    ]
   },
   {
     id: 'office',
@@ -443,7 +462,14 @@ const pagesData: ServicePageData[] = [
     ],
     formTitle: 'Get an Office Cleaning Proposal',
     formSubtitle: "Book a quick site walkthrough to get a tailored quote for your workspace.",
-    formFacilityOptions: ['Corporate Office', 'Co-working Space', 'Boutique Agency', 'Multi-tenant Building', 'Other']
+    formFacilityOptions: ['Corporate Office', 'Co-working Space', 'Boutique Agency', 'Multi-tenant Building', 'Other'],
+    testimonials: [
+      {
+        quote: "When it came time for us to switch facilities cleaners, we considered a number of companies in the local marketplace. When I met Namoli I was blown away by their professionalism. They weren't just yes people. They asked the right questions and did a comprehensive review. They demonstrated through our tender that they understood our business, did an additional walk through with their franchisee and were professional end to end. We felt comforted, reassured and secure and the Swept App gave us great confidence as it is visual as well as written. Overall, the franchisee team are fantastic and there is continuity of team.",
+        author: "Nikki Norum",
+        title: "Office Manager, Brisbane Camperland"
+      }
+    ]
   },
   {
     id: 'warehouse',
@@ -520,7 +546,19 @@ const pagesData: ServicePageData[] = [
     ],
     formTitle: 'Get an Industrial Proposal',
     formSubtitle: "Book a no-obligation site walkthrough. We'll assess your facility size and operational hazards to provide a tailored quote.",
-    formFacilityOptions: ['Warehouse / Distribution', 'Manufacturing Factory', 'Logistics Hub', 'Other Industrial']
+    formFacilityOptions: ['Warehouse / Distribution', 'Manufacturing Factory', 'Logistics Hub', 'Other Industrial'],
+    testimonials: [
+      {
+        quote: "Cleaning is important to our business, it's more than a requirement.We searched around for nearly 12 months and then we found Namoli.They are fantastic. We wanted a commercial cleaner who managed their staff well and understood our strict guidelines and needs for cleaning. Namoli have clear account management, have supported us through COVID, identify specific cleaning needs and communication is quick and easy via the app, any needs are fixed immediately. We really rely on them and they make my job easier!",
+        author: "Josh Barnes",
+        title: "OH&S, QA and Facilities Coordinator, Melbourne"
+      },
+      {
+        quote: "The less I hear about cleaning, the better, as I know it's being done! Namoli are efficient, action oriented, well presented and easily contactable. Their app is good for communications, for ease of feedback or when additional cleaning needs to be logged. While costs are competitive, the value is in regular audits, quality and maintenance. There is a well-balanced relationship and partnership between us, Namoli and their franchisee and they now operate across multiple sites.",
+        author: "Peter Walsh",
+        title: "CFO, Australia Wool Testing Authority, Melbourne & Brisbane"
+      }
+    ]
   }
 ];
 
@@ -714,11 +752,10 @@ export default function App() {
                 onClick={scrollToForm}
                 className="bg-[#F06278] hover:bg-[#d64d63] text-white px-8 py-4 rounded-md font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
               >
-                Claim Your Free Audit <ChevronRight size={20} />
+                Claim Your Free Site Assessment <ChevronRight size={20} />
               </button>
               
               <div className="flex items-center gap-4 text-white text-sm font-medium px-4">
-                <div className="flex items-center gap-1"><CheckCircle size={16} className="text-[#F06278]" /> ISO Certified</div>
                 <div className="flex items-center gap-1"><CheckCircle size={16} className="text-[#F06278]" /> App Reported</div>
               </div>
             </div>
@@ -788,7 +825,7 @@ export default function App() {
                 ))}
               </ul>
               <button onClick={scrollToForm} className="mt-8 text-white font-bold flex items-center gap-2 hover:underline">
-                Claim Your Free Audit <ChevronRight size={18} />
+                Claim Your Free Site Assessment <ChevronRight size={18} />
               </button>
             </div>
 
@@ -811,6 +848,33 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      {activePage.testimonials && activePage.testimonials.length > 0 && (
+        <section className="py-16 bg-slate-50 border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-[#003B5C] mb-12">What Our Clients Say</h2>
+            <div className={`grid gap-8 ${activePage.testimonials.length === 1 ? 'max-w-3xl mx-auto' : 'md:grid-cols-2'}`}>
+              {activePage.testimonials.map((test, idx) => (
+                <div key={idx} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col h-full">
+                  <div className="flex gap-1 text-amber-400 mb-6">
+                    <Star size={20} fill="currentColor" />
+                    <Star size={20} fill="currentColor" />
+                    <Star size={20} fill="currentColor" />
+                    <Star size={20} fill="currentColor" />
+                    <Star size={20} fill="currentColor" />
+                  </div>
+                  <p className="text-slate-600 italic mb-6 leading-relaxed flex-grow">"{test.quote}"</p>
+                  <div>
+                    <h4 className="font-bold text-[#003B5C]">{test.author}</h4>
+                    <p className="text-sm text-slate-500">{test.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ & Form Section */}
       <section className="bg-white py-20">
@@ -928,7 +992,7 @@ export default function App() {
           onClick={scrollToForm}
           className="bg-[#F06278] hover:bg-[#d64d63] text-white font-bold py-2.5 px-8 rounded shadow-sm transition-colors"
         >
-          Claim Your Free Audit
+          Claim Your Free Site Assessment
         </button>
       </div>
 
