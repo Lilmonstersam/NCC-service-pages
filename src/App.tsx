@@ -147,7 +147,7 @@ const pagesData: ServicePageData[] = [
         answer: 'Our teams are trained in alarm setting and secure lock-up procedures. We can be the last ones out, ensuring gates and doors are secured according to your specific protocols.'
       }
     ],
-    formTitle: 'Get a School Proposal',
+    formTitle: 'Get a School Proposal + Free Site Assessment',
     formSubtitle: "Book a no-obligation site walkthrough. We'll assess your square footage and hygiene needs to provide a tailored quote.",
     formFacilityOptions: ['Primary School', 'Secondary School', 'University / TAFE', 'Other']
   },
@@ -215,7 +215,7 @@ const pagesData: ServicePageData[] = [
         answer: 'Yes, all our staff hold current Working with Children Checks, are fully police checked, and adhere to a rigid drug and alcohol policy for your complete peace of mind.'
       }
     ],
-    formTitle: 'Get a Childcare Proposal',
+    formTitle: 'Get a Childcare Proposal + Free Site Assessment',
     formSubtitle: "Book a no-obligation site walkthrough to assess your centre's specific hygiene needs.",
     formFacilityOptions: ['Early Learning Centre', 'Kindergarten', 'Preschool', 'Outside School Hours Care', 'Other']
   },
@@ -292,7 +292,7 @@ const pagesData: ServicePageData[] = [
         answer: 'Our teams are trained to work safely around industrial equipment without causing disruption to your operations or risking damage to sensitive machinery.'
       }
     ],
-    formTitle: 'Get an Industrial Proposal',
+    formTitle: 'Get an Industrial Proposal + Free Site Assessment',
     formSubtitle: "Book a site walkthrough to assess your facility's safety and cleaning requirements.",
     formFacilityOptions: ['Manufacturing Plant', 'Warehouse', 'Distribution Centre', 'Food Processing', 'Other'],
     testimonials: [
@@ -376,7 +376,7 @@ const pagesData: ServicePageData[] = [
         answer: 'Our cleaning processes are meticulously designed to help you meet and exceed all relevant healthcare standards, including RACGP accreditation requirements.'
       }
     ],
-    formTitle: 'Get a Medical Cleaning Proposal',
+    formTitle: 'Get a Medical Cleaning Proposal + Free Site Assessment',
     formSubtitle: "Book a confidential site walkthrough to discuss your infection control requirements.",
     formFacilityOptions: ['Medical Clinic', 'Dental Practice', 'Hospital', 'Allied Health', 'Other'],
     testimonials: [
@@ -460,7 +460,7 @@ const pagesData: ServicePageData[] = [
         answer: 'Our staff are fully trained in building security, alarm operation, and lock-up procedures, ensuring your premises are always secure when we leave.'
       }
     ],
-    formTitle: 'Get an Office Cleaning Proposal',
+    formTitle: 'Get an Office Cleaning Proposal + Free Site Assessment',
     formSubtitle: "Book a quick site walkthrough to get a tailored quote for your workspace.",
     formFacilityOptions: ['Corporate Office', 'Co-working Space', 'Boutique Agency', 'Multi-tenant Building', 'Other'],
     testimonials: [
@@ -544,7 +544,7 @@ const pagesData: ServicePageData[] = [
         answer: 'Absolutely. All operatives undergo thorough WHS inductions before stepping on site. We familiarise our teams with your specific hazard protocols, ensuring they work safely around forklifts and heavy machinery.'
       }
     ],
-    formTitle: 'Get an Industrial Proposal',
+    formTitle: 'Get an Industrial Proposal + Free Site Assessment',
     formSubtitle: "Book a no-obligation site walkthrough. We'll assess your facility size and operational hazards to provide a tailored quote.",
     formFacilityOptions: ['Warehouse / Distribution', 'Manufacturing Factory', 'Logistics Hub', 'Other Industrial'],
     testimonials: [
@@ -1002,7 +1002,7 @@ export default function App() {
           onClick={scrollToForm}
           className="w-full bg-[#F06278] text-white font-bold py-3 rounded-md shadow-sm"
         >
-          Request Proposal
+          Free Site Assessment
         </button>
       </div>
 
