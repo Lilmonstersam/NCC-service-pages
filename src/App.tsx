@@ -5,7 +5,7 @@ import {
   Phone, Mail, MapPin, Menu, X, School, GraduationCap,
   ClipboardCheck, Award, Facebook, Linkedin, LogIn, Building2, Factory,
   Stethoscope, Baby, Package, Truck, Wrench, HardHat,
-  Home as HomeIcon, ArrowRight
+  Home as HomeIcon, ArrowRight, ExternalLink
 } from 'lucide-react';
 import { pagesData } from './data.tsx';
 
@@ -432,6 +432,42 @@ function ServicePage() {
   }, [slug]);
 
   if (!activePage) return <Navigate to="/" replace />;
+
+  if (activePage.id === 'medical') {
+    return (
+      <>
+        <section className="relative pt-40 pb-20 lg:pt-56 lg:pb-56 bg-[#003B5C] overflow-hidden transition-all duration-500 min-h-[80vh] flex flex-col items-center justify-center text-center">
+          <div className="absolute inset-0 z-0">
+            <img key={activePage.heroImage} src={activePage.heroImage} alt={activePage.navTitle} className="absolute inset-0 w-full h-full object-cover opacity-40 animate-[fadeIn_1s_ease-out]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#003B5C] via-[#003B5C]/90 to-transparent"></div>
+          </div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 animate-[slideUp_0.5s_ease-out]">
+            <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-8 border border-white/20">
+              <Stethoscope size={40} className="text-[#F06278]" />
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
+              We've Launched a Dedicated Healthcare Division
+            </h1>
+            <p className="text-lg md:text-xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
+              To better serve our clinical and healthcare clients, all medical cleaning services and expertise have been transitioned to our specialised branch: <strong>Namoli Healthcare</strong>.
+            </p>
+            <a 
+              href="https://www.namolihealthcare.com.au/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex flex-col items-center justify-center bg-[#F06278] hover:bg-[#d64d63] text-white px-10 py-6 rounded-xl shadow-2xl hover:shadow-[#F06278]/20 transition-all border border-white/20 group"
+            >
+              <div className="flex items-center gap-3 text-2xl font-bold mb-1">
+                Visit Namoli Healthcare <ExternalLink size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
+              <span className="text-sm font-medium opacity-90">(You will be redirected to our dedicated medical site)</span>
+            </a>
+          </div>
+        </section>
+        <TrustBanner />
+      </>
+    );
+  }
 
   return (
     <>
