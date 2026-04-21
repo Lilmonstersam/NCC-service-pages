@@ -8,6 +8,7 @@ import {
   Home as HomeIcon, ArrowRight, ExternalLink
 } from 'lucide-react';
 import { pagesData } from './data.tsx';
+import { ContactPage } from './ContactPage';
 
 // --- Utilities ---
 
@@ -70,9 +71,9 @@ function Header() {
               </div>
             </Link>
             <div className="hidden lg:flex items-center space-x-2">
-              <button onClick={scrollToForm} className="bg-[#F06278] hover:bg-[#d64d63] text-white px-5 py-2 rounded-md font-semibold text-sm transition-colors shadow-sm ml-2">
+              <Link to="/contact" className="bg-[#F06278] hover:bg-[#d64d63] text-white px-5 py-2 rounded-md font-semibold text-sm transition-colors shadow-sm ml-2">
                 Contact Us
-              </button>
+              </Link>
             </div>
             <div className="lg:hidden">
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-[#003B5C] p-2">
@@ -114,7 +115,7 @@ function Header() {
                 );
               })}
               <div className="pt-4 mt-2 border-t border-slate-100">
-                <button onClick={() => { scrollToForm(); setMobileMenuOpen(false); }} className="w-full bg-[#F06278] text-white px-4 py-3 rounded-md font-semibold">Contact Us</button>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block text-center w-full bg-[#F06278] text-white px-4 py-3 rounded-md font-semibold">Contact Us</Link>
               </div>
             </div>
           </div>
@@ -602,6 +603,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
