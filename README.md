@@ -45,7 +45,7 @@ index.html            # Page shell + meta title/description
 src/main.tsx          # Router setup
 src/App.tsx           # Layout, homepage, shared ServicePage template
 src/data.tsx          # All service page content (pagesData)
-src/assets/           # Locally hosted images (e.g. strata-hero.jpg)
+src/assets/           # Locally hosted images (e.g. strata-cleaning.png)
 ```
 
 ## Adding or editing a service page
