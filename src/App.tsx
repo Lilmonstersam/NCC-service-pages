@@ -250,6 +250,7 @@ function HomePage() {
     { page: pagesData.find(p => p.id === 'childcare')!, items: ['Play Areas & Toys', 'Hand Basins', 'Sleep Areas', 'Staff Rooms'] },
     { page: pagesData.find(p => p.id === 'industrial')!, items: ['Factories', 'Machines', 'High Ceilings', 'Processing Facilities'] },
     { page: pagesData.find(p => p.id === 'warehouse')!, items: ['Loading Docks', 'Warehouses', 'Amenities', 'Mezzanine Levels'] },
+    { page: pagesData.find(p => p.id === 'strata')!, items: ['Lobbies & Foyers', 'Lifts & Stairwells', 'Car Parks', 'Bin Areas'] },
   ];
 
   const processSteps = [

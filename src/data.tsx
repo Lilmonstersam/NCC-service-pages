@@ -3,8 +3,9 @@ import {
   ShieldCheck, Users, Clock, Leaf, CheckCircle,
   ClipboardCheck, Award, School, GraduationCap,
   Building2, Factory, Stethoscope, Baby, Package,
-  Truck, Wrench, HardHat
+  Truck, Wrench, HardHat, Building
 } from 'lucide-react';
+import strataHero from './assets/strata-hero.jpg';
 
 export interface ServicePageData {
   id: string;
@@ -263,5 +264,40 @@ export const pagesData: ServicePageData[] = [
       { quote: "Cleaning is important to our business, it's more than a requirement. We searched around for nearly 12 months and then we found Namoli. They are fantastic. We wanted a commercial cleaner who managed their staff well and understood our strict guidelines.", author: "Josh Barnes", title: "OH&S, QA and Facilities Coordinator, Melbourne" },
       { quote: "The less I hear about cleaning, the better, as I know it's being done! Namoli are efficient, action oriented, well presented and easily contactable. While costs are competitive, the value is in regular audits, quality and maintenance.", author: "Peter Walsh", title: "CFO, Australia Wool Testing Authority" }
     ]
+  },
+  {
+    id: 'strata',
+    slug: 'strata-cleaning',
+    navTitle: 'Strata',
+    navIcon: Building,
+    heroImage: strataHero,
+    heroTitle: <>Professional Strata Cleaning Services for <span className="text-[#F06278]">Spotless Common Areas.</span></>,
+    heroSubtitle: 'Is your building making the right first impression on residents and visitors?',
+    heroDescription: 'From the lobby to the car park, shared spaces shape how owners, tenants, and visitors judge your building. Namoli delivers app-managed strata cleaning and maintenance that keeps body corporates, owners corporations, and strata managers in complete control.',
+    whySectionTitle: 'Why Strata Managers Choose Namoli',
+    whySectionSubtitle: 'Juggling contractors, resident complaints, and committee expectations is hard enough. A missed clean in a common area is visible to every owner within hours.',
+    whyCards: [
+      { icon: ShieldCheck, title: 'One Contractor, Full Accountability', description: 'A single point of contact for all your common area cleaning. Our fully insured, police-checked cleaners work in uniform with visible ID, so residents always know who is on site.', iconBgClass: 'bg-blue-50', iconColorClass: 'text-[#003B5C]' },
+      { icon: ClipboardCheck, title: 'Committee-Ready Reporting', description: 'Every clean is logged in real time through our Clean Smarts app, with checklists, photos, and audit results you can table at your next body corporate meeting. You never pay for a missed clean.', iconBgClass: 'bg-purple-50', iconColorClass: 'text-purple-700' },
+      { icon: Leaf, title: 'Green Cleaning for Shared Spaces', description: 'We use GECA-certified, eco-friendly products that are tough on grime but safe for residents and pets. No harsh chemical odours lingering in lobbies, lifts, or corridors.', iconBgClass: 'bg-green-50', iconColorClass: 'text-green-700' }
+    ],
+    detailsSectionTitle: 'Complete Common Area Cleaning',
+    detailsSectionSubtitle: 'From boutique apartment blocks to large mixed-use developments and commercial strata schemes, our operational model adapts to your building\'s traffic, layout, and budget.',
+    detailsList: ['Scheduled lobby, lift & stairwell cleaning', 'Strata cleaning and maintenance under one contract', 'Rapid response for spills, leaks & incidents'],
+    detailsCards: [
+      { icon: Building, title: 'Lobbies, Lifts & Stairwells', description: 'Presentation cleaning of entrances, foyers, lift interiors, stairwells, and mailrooms. We target high-touch points like handrails, lift buttons, and intercoms to keep shared spaces hygienic.' },
+      { icon: Truck, title: 'Car Parks & Bin Areas', description: 'Pressure cleaning of car parks and driveways, bin room sanitising, and odour control. We keep back-of-house areas as presentable as the front door.' },
+      { icon: Wrench, title: 'Windows, Gutters & Exteriors', description: 'Periodic strata window cleaning, gutter clearing, and high-pressure washing of paths, facades, and outdoor common areas, scheduled around your building\'s maintenance calendar.', fullWidth: true }
+    ],
+    faqTitle: 'Common Questions from Strata Managers',
+    faqs: [
+      { question: 'What is strata cleaning?', answer: 'Strata cleaning is the regular cleaning of the shared or common areas of a strata-titled property, such as lobbies, hallways, lifts, stairwells, car parks, and bin areas. It is typically arranged by the body corporate, owners corporation, or strata manager on behalf of all owners.' },
+      { question: 'Do you work directly with body corporates and strata managers?', answer: 'Yes. We report to your committee or managing agent through a single point of contact, provide app-based records of every clean, and tailor schedules and invoicing to your by-laws and budget.' },
+      { question: 'What does strata cleaning cost?', answer: 'Site assessments are free, and there is no one-size-fits-all price. We build a schedule around your building\'s size, foot traffic, and frequency requirements, priced to your committee\'s budget.' },
+      { question: 'Can you handle after-hours or urgent cleaning?', answer: 'Yes. Our teams operate 24/7, so scheduled cleans can run at low-traffic times, and urgent issues like spills or lift incidents can be attended to quickly.' }
+    ],
+    formTitle: 'Get a Strata Proposal + Free Site Assessment',
+    formSubtitle: "Book a no-obligation walkthrough of your common areas. We'll assess your building and provide a tailored quote for your committee.",
+    formFacilityOptions: ['Residential Apartment Complex', 'Mixed-Use Development', 'Commercial Strata', 'Body Corporate / Owners Corporation', 'Other']
   }
 ];
