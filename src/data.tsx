@@ -5,7 +5,7 @@ import {
   Building2, Factory, Stethoscope, Baby, Package,
   Truck, Wrench, HardHat, Building
 } from 'lucide-react';
-import strataHero from './assets/strata-hero.jpg';
+import strataHero from './assets/strata-cleaning.png';
 
 export interface ServicePageData {
   id: string;
