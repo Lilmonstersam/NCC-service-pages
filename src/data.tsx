@@ -275,7 +275,7 @@ export const pagesData: ServicePageData[] = [
     heroSubtitle: 'Is your building making the right first impression on residents and visitors?',
     heroDescription: 'From the lobby to the car park, shared spaces shape how owners, tenants, and visitors judge your building. Namoli delivers app-managed strata cleaning and maintenance that keeps body corporates, owners corporations, and strata managers in complete control.',
     whySectionTitle: 'Why Strata Managers Choose Namoli',
-    whySectionSubtitle: 'Juggling contractors, resident complaints, and committee expectations is hard enough. A missed clean in a common area is visible to every owner within hours.',
+    whySectionSubtitle: 'Juggling contractors, resident complaints, and committee expectations is hard enough without the added headache of a missed common area clean, which is visible to every owner within hours.',
     whyCards: [
       { icon: ShieldCheck, title: 'One Contractor, Full Accountability', description: 'A single point of contact for all your common area cleaning. Our fully insured, police-checked cleaners work in uniform with visible ID, so residents always know who is on site.', iconBgClass: 'bg-blue-50', iconColorClass: 'text-[#003B5C]' },
       { icon: ClipboardCheck, title: 'Committee-Ready Reporting', description: 'Every clean is logged in real time through our Clean Smarts app, with checklists, photos, and audit results you can table at your next body corporate meeting. You never pay for a missed clean.', iconBgClass: 'bg-purple-50', iconColorClass: 'text-purple-700' },
