@@ -30,3 +30,6 @@ coverage
 # Environment
 .env*
 !.env.example
+
+# Local offline preview build (generated, not deployed)
+local-preview/

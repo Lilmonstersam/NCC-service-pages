@@ -283,17 +283,18 @@ export const pagesData: ServicePageData[] = [
     ],
     detailsSectionTitle: 'Complete Common Area Cleaning',
     detailsSectionSubtitle: 'From boutique apartment blocks to large mixed-use developments and commercial strata schemes, our operational model adapts to your building\'s traffic, layout, and budget.',
-    detailsList: ['Scheduled lobby, lift & stairwell cleaning', 'Strata cleaning and maintenance under one contract', 'Rapid response for spills, leaks & incidents'],
+    detailsList: ['Scheduled lobby, lift & stairwell cleaning', 'Window & exterior soft washing up to three storeys', 'Strata cleaning and maintenance under one contract', 'Rapid response for spills, leaks & incidents'],
     detailsCards: [
       { icon: Building, title: 'Lobbies, Lifts & Stairwells', description: 'Presentation cleaning of entrances, foyers, lift interiors, stairwells, and mailrooms. We target high-touch points like handrails, lift buttons, and intercoms to keep shared spaces hygienic.' },
       { icon: Truck, title: 'Car Parks & Bin Areas', description: 'Pressure cleaning of car parks and driveways, bin room sanitising, and odour control. We keep back-of-house areas as presentable as the front door.' },
-      { icon: Wrench, title: 'Windows, Gutters & Exteriors', description: 'Periodic strata window cleaning, gutter clearing, and high-pressure washing of paths, facades, and outdoor common areas, scheduled around your building\'s maintenance calendar.', fullWidth: true }
+      { icon: Wrench, title: 'Windows & Exterior Soft Washing', description: 'Pole-fed strata window cleaning and gentle soft washing of building exteriors up to three storeys, plus pressure washing of paths, entries, and outdoor common areas, scheduled around your building\'s maintenance calendar.', fullWidth: true }
     ],
     faqTitle: 'Common Questions from Strata Managers',
     faqs: [
       { question: 'What is strata cleaning?', answer: 'Strata cleaning is the regular cleaning of the shared or common areas of a strata-titled property, such as lobbies, hallways, lifts, stairwells, car parks, and bin areas. It is typically arranged by the body corporate, owners corporation, or strata manager on behalf of all owners.' },
       { question: 'Do you work directly with body corporates and strata managers?', answer: 'Yes. We report to your committee or managing agent through a single point of contact, provide app-based records of every clean, and tailor schedules and invoicing to your by-laws and budget.' },
       { question: 'What does strata cleaning cost?', answer: 'Site assessments are free, and there is no one-size-fits-all price. We build a schedule around your building\'s size, foot traffic, and frequency requirements, priced to your committee\'s budget.' },
+      { question: 'How high can you clean on the outside of the building?', answer: 'We service exteriors and windows up to three storeys using pole-fed equipment and soft washing methods. This covers the majority of low and mid-rise strata schemes. Work requiring rope access, harnesses, or elevated work platforms sits outside our scope, and we will tell you upfront if your building needs a specialist for those areas.' },
       { question: 'Can you handle after-hours or urgent cleaning?', answer: 'Yes. Our teams operate 24/7, so scheduled cleans can run at low-traffic times, and urgent issues like spills or lift incidents can be attended to quickly.' }
     ],
     formTitle: 'Get a Strata Proposal + Free Site Assessment',
