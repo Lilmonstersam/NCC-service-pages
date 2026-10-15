@@ -1,60 +1,57 @@
-# NCC Service Pages — Namoli Commercial Cleaning Mockups
+# NCC service-page mockup
 
-React + Vite mockup site for Namoli Commercial Cleaning service pages, used for SEO copy and layout reviews. Includes a homepage and data-driven service pages (Schools, Childcare, Industrial, Medical, Office, Warehouse, Strata).
+Namoli's commercial cleaning overview, five service pages and contact prototype, prepared for GitHub Pages. The current review copy and original branding are preserved. Every detail page has seven FAQs, collapsed by default and toggled by click or keyboard, plus an inline enquiry form.
 
-## Stack
+## Local development
 
-- React 19 + TypeScript, bundled with Vite 6
-- Tailwind CSS 4 (via `@tailwindcss/vite`)
-- React Router 7 (`BrowserRouter` with basename `/NCC-service-pages`)
-- lucide-react icons
+Requires Node.js 22 or newer. No API keys or runtime dependencies are required.
 
-## Run locally
-
-**Prerequisites:** Node.js 20+
-
-```bash
-npm install
-npm run dev        # serves on http://localhost:3000
+```sh
+npm ci
+npm run dev
 ```
 
-No environment variables are required.
+Open [the local mockup](http://127.0.0.1:8767/preview/index.html). Edit the HTML files in `preview/`, shared behaviour in `preview/mockup.js`, and preview-specific styles in `preview/mockup.css`.
 
-## Build & preview
+## Build and verify
 
-```bash
-npm run build      # outputs to dist/
-npm run preview    # serve the production build locally
-npm run lint       # type-check only (tsc --noEmit)
+```sh
+npm run check
+npm run build
+npm run preview
 ```
 
-## Deployment (GitHub Pages)
+The build validates local asset links, page structure, inline forms, JSON-LD and the 35 collapsed FAQs, then copies only `preview/` into `dist/`. The output includes `.nojekyll` and review-only `robots.txt`. It works under `/NCC-service-pages/` using relative URLs, including direct service-page links and refreshes.
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site and deploys `dist/` to GitHub Pages via GitHub Actions.
+To test that project path locally:
 
-- One-off repo setup: **Settings > Pages > Build and deployment > Source > GitHub Actions**.
-- The site is served under `/NCC-service-pages/`. This is configured in two places that must stay in sync:
-  - `base: '/NCC-service-pages/'` in `vite.config.ts`
-  - `basename="/NCC-service-pages"` in `src/main.tsx`
-- The workflow can also be run manually from the Actions tab (`workflow_dispatch`).
-
-## Project structure
-
-```
-index.html            # Page shell + meta title/description
-src/main.tsx          # Router setup
-src/App.tsx           # Layout, homepage, shared ServicePage template
-src/data.tsx          # All service page content (pagesData)
-src/assets/           # Locally hosted images (e.g. strata-cleaning.png)
+```sh
+BASE_PATH=/NCC-service-pages/ PORT=8768 npm run preview
 ```
 
-## Adding or editing a service page
+## GitHub Actions deployment
 
-All service page content lives in `src/data.tsx` as entries in `pagesData`. Add a new object with a unique `id` and `slug`, and the page is automatically routed at `/services/<slug>` and added to the nav and footer. To feature it on the homepage services grid, add a card to `serviceCards` in `src/App.tsx`.
+Pushing to `main` runs `.github/workflows/deploy.yml`. It validates and builds the mockup, uploads `dist/`, and deploys to GitHub Pages. Pull requests run the build without deploying. Manual deployment is available through the Actions tab.
 
-Hero images are either hotlinked from the live site's media library (namoli.com.au) or imported from `src/assets/`.
+The repository's Pages source must be **GitHub Actions** in Settings > Pages. The published address is [the NCC service-page mockup](https://lilmonstersam.github.io/NCC-service-pages/).
 
-## Notes
+Only the site output is deployed. Downloaded WordPress captures, local research, generated reports, credentials, build output and dependency folders are excluded from Git. The earlier React application is preserved in `legacy/react-prototype/` for reference and is not part of this deployment. Its original scripts can be run from that directory independently.
 
-- `.gitignore` excludes `node_modules`, `dist`, logs, editor folders, and `.env*` files.
-- The `@google/genai`, `express`, `dotenv`, and `motion` dependencies are unused leftovers from the original AI Studio scaffold and can be removed in a future cleanup.
+## Source structure
+
+```text
+preview/                 Editable HTML, shared CSS/JS and bundled assets
+scripts/check-site.mjs   Static validation used locally and in CI
+scripts/build.mjs        Copies the validated site into dist/
+serve.cjs                Local source and production preview server
+.github/workflows/       Build and GitHub Pages deployment
+legacy/react-prototype/  Previous repository application
+```
+
+The preview's local CSS, scripts and images are bundled in `preview/assets/`. Some original hero imagery and font files remain hosted on Namoli's site and its font providers, as in the supplied design.
+
+## Forms and review metadata
+
+Service forms reproduce the live contact fields and service-specific facility choices. Native validation works, but submissions stay local. Production address lookup, hCaptcha and CRM submission are not connected. The separate contact prototype also does not send enquiries.
+
+Pages retain `noindex, nofollow` and production Namoli canonical URLs because this is a design and copy review site. Update the review metadata and form integrations before using this implementation on the production website.

@@ -1,0 +1,68 @@
+/* Preview-only repairs to captured WordPress state. Original design CSS is retained. */
+html { margin-top: 0 !important; }
+body { min-width: 0; }
+#header { position: relative !important; top: 0 !important; transform: none !important; }
+.off-canvas-content { transform: none !important; padding-top: 0 !important; }
+.header .menu > li { position: relative; }
+.header .menu > li > .submenu { display: none; }
+.header .menu > li:hover > .submenu,
+.header .menu > li:focus-within > .submenu { display: block; }
+.header .menu .submenu { z-index: 50; }
+.mockup-submenu-toggle { display: none; }
+.mockup-menu-shade { display: none; }
+#floating-cta { display: none; }
+.namoli-faq-container details { height: auto; pointer-events: auto; }
+.namoli-faq-container .namoli-faq-question { position: relative; margin: 0 !important; padding: 0 30px 0 0; cursor: pointer; }
+.namoli-faq-container .namoli-faq-question:focus-visible { outline: 2px solid #003b5c; outline-offset: 5px; }
+.namoli-faq-container .namoli-faq-question::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); color: #003b5c; font-size: 20px; font-weight: 400; }
+.namoli-faq-container details[open] > .namoli-faq-question::after { content: '−'; }
+.namoli-faq-container details[open] .namoli-faq-answer-container { margin-top: 12px !important; }
+.namoli-faq-container .namoli-faq-answer-container { max-height: none; }
+.namoli-faq-container details:not([open]) .namoli-faq-answer-container { display: none; }
+.namoli-faq-container details[open] .namoli-faq-answer-container { display: block; }
+/* Keep retained hub sliders responsive after removing captured fixed dimensions. */
+.hero-slider, .hero-slider .slick-list, .hero-slider .slick-track { height: 100%; }
+.hero-slider .bg-image { height: 100%; background-size: cover; background-position: center; }
+.slick-prev::before, .slick-next::before { font-family: sans-serif; }
+.slick-prev::before { content: '‹'; }
+.slick-next::before { content: '›'; }
+.slick-dots li button::before { font-family: sans-serif; content: '•'; }
+.slick-loading .slick-list { background: none; }
+.shape-bg .section-body .has-image .hic-media-container::after,
+.shape-bg .section-body .has-image .hic-image-container::after { background-image: url('assets/bg-pink-stipe.png'); }
+.hero .hero-bg-overlay { background-image: url('assets/final-hero-element.png'); }
+.mockup-contact .hero-inner > * { min-width: 0; }
+.mockup-contact .hero-subtitle { max-width: 100%; }
+/* Same single-column field layout and palette as the live service enquiry forms. */
+#contact-form { scroll-margin-top: 24px; }
+.namoli-enquiry-form { margin: 24px 0 0; background: transparent; }
+.namoli-enquiry-field { margin-bottom: 20px; min-width: 0; }
+.namoli-enquiry-form label { display: block; margin: 0 0 6px; color: #62748e; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; line-height: 1.5; text-transform: uppercase; }
+.namoli-enquiry-form input,
+.namoli-enquiry-form select { box-sizing: border-box; display: block; width: 100%; min-width: 0; height: 40px; margin: 0; padding: 8px 10px; border: 1px solid #dee5ed; border-radius: 2px; background: #fff; color: #475569; font-family: inherit; font-size: 14px; box-shadow: none; }
+.namoli-enquiry-form input:focus,
+.namoli-enquiry-form select:focus { outline: 2px solid #003b5c; outline-offset: 2px; }
+.namoli-enquiry-form .button { margin: 4px 0 12px; border: 0; border-radius: 50px; padding: 15px 24px; background: #f06178; color: #fff; font-weight: 700; cursor: pointer; }
+.namoli-enquiry-form .namoli-enquiry-note,
+.namoli-enquiry-form .namoli-enquiry-status { margin: 0 0 12px; color: #62748e; font-size: 12px; line-height: 1.5; }
+.namoli-enquiry-form .namoli-enquiry-status { color: #003b5c; font-weight: 700; }
+.namoli-enquiry-status[hidden] { display: none; }
+.namoli-overview-enquiry { padding: 64px 0; }
+.namoli-overview-enquiry-card { max-width: 680px; margin: 0 auto; padding: 24px; border-radius: 16px; background: #f8fafc; }
+@media (max-width: 1023px) {
+  #off-canvas { position: fixed; inset: 0 0 0 auto; width: min(340px,90vw); height: 100dvh; overflow-y: auto; z-index: 1002; padding-top: 44px; }
+  .mockup-menu-open #off-canvas { visibility: visible; transform: translateX(0); }
+  .mockup-menu-open .mockup-menu-shade { display: block; position: fixed; inset: 0; background: rgba(0,59,92,.4); z-index: 1001; }
+  #off-canvas .submenu { display: none; position: static; }
+  #off-canvas .mockup-submenu-open > .submenu { display: block; }
+  #off-canvas li { position: relative; }
+  #off-canvas .mockup-submenu-toggle { display: block; position: absolute; right: 4px; top: 0; height: 40px; width: 40px; font-size: 22px; color: inherit; }
+  /* The contact prototype uses its own header and palette. */
+  .site-header nav.mockup-nav-open { display: block; position: absolute; top: 100%; left: 0; right: 0; background: #fff; z-index: 100; padding: 16px 24px; max-height: 75dvh; overflow-y: auto; }
+  .site-header nav.mockup-nav-open .main-nav { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .site-header nav.mockup-nav-open .main-nav > li { position: relative; }
+  .site-header nav.mockup-nav-open .sub-menu { display: none; position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; }
+  .site-header nav.mockup-nav-open .mockup-submenu-open > .sub-menu { display: block; }
+  .site-header nav.mockup-nav-open .mockup-submenu-toggle { display: block; position: absolute; top: 0; right: 0; width: 40px; height: 40px; }
+  .mockup-contact .hero-right > div[style] { flex-wrap: wrap; gap: 12px; }
+}
