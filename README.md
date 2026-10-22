@@ -1,6 +1,6 @@
 # NCC service-page mockup
 
-Namoli's commercial cleaning overview, five service pages and contact prototype, prepared for GitHub Pages. The current review copy and original branding are preserved. Every detail page has seven FAQs, collapsed by default and toggled by click or keyboard, plus an inline enquiry form.
+Namoli's commercial cleaning overview, six service pages (including strata cleaning) and contact prototype, prepared for GitHub Pages. The current review copy and original branding are preserved. Every detail page has seven FAQs, collapsed by default and toggled by click or keyboard, plus an inline enquiry form.
 
 ## Local development
 
@@ -21,7 +21,7 @@ npm run build
 npm run preview
 ```
 
-The build validates local asset links, page structure, inline forms, JSON-LD and the 35 collapsed FAQs, then copies only `preview/` into `dist/`. The output includes `.nojekyll` and review-only `robots.txt`. It works under `/NCC-service-pages/` using relative URLs, including direct service-page links and refreshes.
+The build validates local asset links, page structure, inline forms, JSON-LD and the 42 collapsed FAQs, then copies only `preview/` into `dist/`. The output includes `.nojekyll` and review-only `robots.txt`. It works under `/NCC-service-pages/` using relative URLs, including direct service-page links and refreshes.
 
 To test that project path locally:
 
@@ -48,7 +48,7 @@ serve.cjs                Local source and production preview server
 legacy/react-prototype/  Previous repository application
 ```
 
-The preview's local CSS, scripts and images are bundled in `preview/assets/`. Some original hero imagery and font files remain hosted on Namoli's site and its font providers, as in the supplied design.
+The preview's local CSS, scripts and images are bundled in `preview/assets/`, including the strata hero (`strata-cleaning.jpg`). Some original hero imagery and font files remain hosted on Namoli's site and its font providers, as in the supplied design.
 
 ## Forms and review metadata
 

@@ -30,7 +30,7 @@ async function walk(directory) {
 }
 const files = await walk(root);
 const pages = files.filter(file => file.endsWith('.html'));
-assert.equal(pages.length, 7, 'Expected the overview, five detail pages and contact prototype');
+assert.equal(pages.length, 8, 'Expected the overview, six detail pages and contact prototype');
 let faqs = 0;
 for (const file of files) {
   if (!/\.(?:html|css)$/.test(file)) continue;
@@ -54,5 +54,5 @@ for (const file of files) {
   // Stylesheets and HTML inline styles share the same local URL checks.
   for (const match of content.matchAll(/url\(\s*(["']?)(.*?)\1\s*\)/gi)) await localReference(file,match[2]);
 }
-assert.equal(faqs,35,'Expected seven collapsed FAQs on each detail page');
+assert.equal(faqs,42,'Expected seven collapsed FAQs on each detail page');
 console.log(`Checked ${pages.length} pages, ${faqs} collapsed FAQs and ${references} local references.`);
