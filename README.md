@@ -1,6 +1,6 @@
 # NCC service-page mockup
 
-Namoli's commercial cleaning overview, six service pages (including strata cleaning) and contact prototype, prepared for GitHub Pages. The current review copy and original branding are preserved. Every detail page has seven FAQs, collapsed by default and toggled by click or keyboard, plus an inline enquiry form.
+Namoli's commercial cleaning overview, six service pages (including strata cleaning) and contact prototype, prepared for GitHub Pages. The five existing service pages use the saved live-site copy as their baseline, with limited SEO edits documented in [REVIEW-NOTE.md](REVIEW-NOTE.md). Strata remains a new draft. Every detail page has collapsed FAQs that toggle by click or keyboard, plus an inline enquiry form.
 
 ## Local development
 
@@ -21,7 +21,7 @@ npm run build
 npm run preview
 ```
 
-The build validates local asset links, page structure, inline forms, JSON-LD and the 42 collapsed FAQs, then copies only `preview/` into `dist/`. The output includes `.nojekyll` and review-only `robots.txt`. It works under `/NCC-service-pages/` using relative URLs, including direct service-page links and refreshes.
+The build validates local asset links, page structure, inline forms, JSON-LD and the 27 collapsed FAQs, then copies only `preview/` into `dist/`. The output includes `.nojekyll` and review-only `robots.txt`. It works under `/NCC-service-pages/` using relative URLs, including direct service-page links and refreshes.
 
 To test that project path locally:
 

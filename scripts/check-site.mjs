@@ -40,6 +40,9 @@ for (const file of files) {
     assert(/name="robots"\s+content="noindex, nofollow"/.test(content), `Missing review noindex: ${file}`);
     assert(!content.includes('_files/'), `Unbundled download dependency: ${file}`);
     const details = [...content.matchAll(/<details\b([^>]*)>/gi)];
+    const expectedFaqs = file.endsWith('strata-cleaning-services.html') ? 7
+      : file.endsWith('index.html') || file.endsWith('contact.html') ? 0 : 4;
+    assert.equal(details.length, expectedFaqs, `Unexpected FAQ count: ${file}`);
     for (const detail of details) {
       assert(!/\bopen(?:\s|=|$)/i.test(detail[1]), `FAQ is expanded on load: ${file}`);
       faqs++;
@@ -54,5 +57,5 @@ for (const file of files) {
   // Stylesheets and HTML inline styles share the same local URL checks.
   for (const match of content.matchAll(/url\(\s*(["']?)(.*?)\1\s*\)/gi)) await localReference(file,match[2]);
 }
-assert.equal(faqs,42,'Expected seven collapsed FAQs on each detail page');
+assert.equal(faqs,27,'Expected four FAQs on each restored detail page and seven on the strata draft');
 console.log(`Checked ${pages.length} pages, ${faqs} collapsed FAQs and ${references} local references.`);
